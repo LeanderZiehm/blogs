@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Hello World](README.md)
+* [Welcome to My Blog](README.md)
 * [SSH](ssh.md)
