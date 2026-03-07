@@ -4,7 +4,9 @@ description: clis
 
 # Linux Terminal Commands
 
-## Grep
+## Search
+
+### Grep
 
 search for strings in current directory recusive also for sub directories
 
@@ -24,9 +26,7 @@ ignore dir like node\_modules:
 grep -r --exclude-dir=node_modules "your_string" .
 ```
 
-
-
-## find and replace
+### Find and replace
 
 ```
 sed 's/foo/bar/g'
@@ -72,7 +72,7 @@ lsof -i :8080
 
 
 
-## Disk
+## Disk: Storage
 
 ### Disk usage
 
@@ -83,8 +83,6 @@ df -h
 ```
 du -ah . | sort -rh | head -20
 ```
-
-
 
 ### Disk partitions
 
@@ -102,8 +100,6 @@ cfdisk
 ncdu
 ```
 
-
-
 ## Processes
 
 ```
@@ -113,8 +109,6 @@ htop
 ```
 btop
 ```
-
-
 
 ## HTTP Requests
 
@@ -140,8 +134,6 @@ nvim
 
 fzf
 
-
-
 ## Container
 
 podman
@@ -152,8 +144,6 @@ kubectl
 
 
 
-
-
 ## Logs
 
 journalctl -u nginx
@@ -161,10 +151,6 @@ journalctl -u nginx
 
 
 ## Systemd
-
-
-
-
 
 #### Service control
 
@@ -296,6 +282,14 @@ systemctl hibernate
 ```
 
 ***
+
+
+
+
+
+
+
+
 
 
 
