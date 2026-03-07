@@ -14,4 +14,10 @@ Think of this as a personal mini-wiki: a place where I document useful informati
 
 ## Guides:
 
+* [network-devices.md](network-devices.md "mention")
+* [linux-terminal-commands.md](linux-terminal-commands.md "mention")
 * [ssh.md](ssh.md "mention")
+* [linux-users.md](linux-users.md "mention")
+*
+*
+

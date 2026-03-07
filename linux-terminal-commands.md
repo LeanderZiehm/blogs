@@ -8,45 +8,65 @@ description: clis
 
 search for strings in current directory recusive also for sub directories
 
-grep -r "your\_string" .
+```
+grep -r "your_string" .
+```
 
 show only filenames:
 
-grep -rl "your\_string" .
+```
+grep -rl "your_string" .
+```
 
 ignore dir like node\_modules:
 
-grep -r --exclude-dir=node\_modules "your\_string" .
+```
+grep -r --exclude-dir=node_modules "your_string" .
+```
 
 
 
 ## find and replace
 
+```
 sed 's/foo/bar/g'
+```
 
 ## Find
 
 search files:
 
-find . -type f -name "name\*"
+```
+find . -type f -name "name*"
+```
 
 
 
 search directories:
 
-find . -type d -name "name\*"
+```
+find . -type d -name "name*"
+```
 
-find . -maxdepth 2 -type d -name "name\*"
+```
+find . -maxdepth 2 -type d -name "name*"
+```
 
-find . -type d -name "name\*" | sort
+```
+find . -type d -name "name*" | sort
+```
 
 
 
 ## Ports
 
-ss -tulp&#x20;
+```
+ss -tulp
+```
 
+```
 lsof -i :8080
+```
 
 
 
@@ -56,35 +76,51 @@ lsof -i :8080
 
 ### Disk usage
 
+```
 df -h
+```
 
+```
 du -ah . | sort -rh | head -20
+```
 
 
 
 ### Disk partitions
 
+```
 lsblk
+```
 
+```
 cfdisk
+```
 
 ### Clean disk
 
+```
 ncdu
+```
 
 
 
 ## Processes
 
+```
 htop
+```
 
+```
 btop
+```
 
 
 
 ## HTTP Requests
 
+```
 curl http://localhost:8080
+```
 
 
 
