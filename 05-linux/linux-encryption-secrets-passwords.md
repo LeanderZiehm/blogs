@@ -1,6 +1,6 @@
 # Linux Encryption Secrets Passwords
 
-## Main:
+## Generate password:
 
 ```
 tr -dc 'A-Za-z0-9' < /dev/urandom | head -c 64; echo

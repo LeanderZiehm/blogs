@@ -2,6 +2,27 @@
 
 ## Add user:
 
+
+
+#### Untrusted User
+
+```
+sudo adduser llm
+sudo passwd llm
+```
+
+
+
+
+
+
+
+
+
+
+
+#### Secret User
+
 ```
 sudo useradd -m -s /bin/bash secret_holder
 sudo passwd secret_holder
@@ -61,6 +82,43 @@ w
 
 
 
+
+
+
+
+
+## Notify on Sudo use.
+
+
+
+```
+sudo apt install auditd 
+```
+
+```
+sudo systemctl enable --now auditd
+sudo systemctl status auditd
+```
+
+
+
+```
+id llm
+```
+
+
+
+```
+sudo vim /etc/audit/rules.d/llm-sudo.rules
+```
+
+```
+-a always,exit -F arch=b64 -S execve -F auid=1002 -F path=/usr/bin/sudo -k llm-sudo
+```
+
+```
+sudo augenrules --load
+```
 
 
 
