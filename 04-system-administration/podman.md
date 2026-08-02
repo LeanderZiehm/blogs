@@ -8,13 +8,17 @@ I liked docker but when researching more about securety the systematic design of
 sudo apt install podman
 ```
 
+## Postgres
+
+```
+podman run --name pg18 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -p 5432:5432 -v pg18data:/var/lib/postgresql -d docker.io/library/postgres:18
+```
+
 
 
 ## Commands
 
 example oneliners:
-
-
 
 ```
 podman images
@@ -24,8 +28,6 @@ podman images
 podman system df
 ```
 
-
-
 ```
 podman run -it --entrypoint sh localhost/api-kv:latest
 ```
@@ -33,10 +35,6 @@ podman run -it --entrypoint sh localhost/api-kv:latest
 ```
 podman kill $(podman ps -q)
 ```
-
-
-
-
 
 ```
 podman run -it docker.io/library/debian:13 /bin/bash
@@ -99,8 +97,6 @@ podman pull docker.io/kalilinux/kali-rolling
 podman inspect --format='{{index .RepoDigests 0}}' kalilinux/kali-rolling
 ```
 
-
-
 ## Podman Compose Examples:
 
 ```
@@ -108,8 +104,6 @@ sudo apt install podman-compose
 ```
 
 todo
-
-
 
 ## Setup docker repos
 
@@ -122,6 +116,3 @@ sudo vim /etc/containers/registries.conf
 ```
 unqualified-search-registries = ["docker.io"]
 ```
-
-
-

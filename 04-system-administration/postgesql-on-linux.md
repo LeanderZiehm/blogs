@@ -6,6 +6,19 @@
 sudo apt install postgresql
 ```
 
+```
+sudo dnf install postgresql
+```
+
+## A: Postgres On Bare Metal
+
+```
+# Install the server packages
+sudo dnf install postgresql-server postgresql-contrib
+# Initialize the database cluster
+sudo postgresql-setup --initdb
+```
+
 ## Enable postgres
 
 ```
@@ -14,15 +27,29 @@ sudo systemctl enable postgresql
 systemctl status postgresql
 ```
 
+```
 sudo -iu postgres psql
+```
+
+
+
+## B: Postgres on Podman:
+
+```
+podman run --name pg18 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -p 5432:5432 -v pg18data:/var/lib/postgresql -d docker.io/library/postgres:18
+```
+
+```
+psql -h localhost -p 5432 -U postgres -d postgres
+```
+
+
 
 ## New user and db
 
 sudo -iu postgres createuser --interactive\
 sudo -iu postgres createdb mydb\
 psql -U myuser -d mydb
-
-
 
 ```
 CREATE ROLE myapp_user
@@ -31,8 +58,6 @@ ALTER USER myapp_user WITH PASSWORD 'new_password';
 CREATE DATABASE myapp_db
 OWNER myapp_user;
 ```
-
-
 
 ## Change passowrd
 
@@ -66,7 +91,7 @@ GRANT CONNECT ON DATABASE odoo TO odoo_user;
 ## Expose Postgres Publicly
 
 {% hint style="danger" %}
-This action is dangerous. Only follow if you follow have strong security practices and you know what you are doing.&#x20;
+This action is dangerous. Only follow if you follow have strong security practices and you know what you are doing.
 {% endhint %}
 
 ```
@@ -84,8 +109,6 @@ host all all 0.0.0.0/0 md5
 ```
 sudo systemctl restart postgresql
 ```
-
-
 
 and also open firewall at 5432:
 
@@ -117,7 +140,7 @@ if you have a backup on the personal computer and want it on the server:
 scp ./pg_dumpall_2026-02-25_19-26-40.sql.gz database:~/
 ```
 
-on server then load the database by:&#x20;
+on server then load the database by:
 
 ```
 gunzip ./pg_dumpall_2026-02-25_19-26-40.sql.gz
@@ -136,8 +159,6 @@ sudo -iu postgres
 psql -f ./pg_dumpall_2026-02-25_19-26-40.sql
 ```
 
-
-
 ## Backup with Rclone to cloud
 
 ```
@@ -152,8 +173,6 @@ rclone config
 
 name it dropbox and select it (13)
 
-
-
 on personal computer:
 
 ```
@@ -162,15 +181,11 @@ rclone authorize "dropbox"
 
 copy paste auth key
 
-
-
 test:
 
 ```
 rclone copy /home/ubuntu/test-backup dropbox:backups --ignore-existing --stats=1m --log-level NOTICE
 ```
-
-
 
 copy file:
 
@@ -190,8 +205,6 @@ crontab -e
 * * * * * ~/backup-postgres.sh >> ~/pg_backup.log 2>&1
 ```
 
-
-
 ## Paths
 
 config:
@@ -206,19 +219,11 @@ data:
 /var/lib/postgres
 ```
 
-
-
 todo:
 
 migrations, expand contract.
 
-
-
-
-
 ## Securety and Isolation
-
-
 
 ```
 
@@ -310,8 +315,6 @@ SELECT * FROM ext_privs
 ORDER BY object_type, schema_name NULLS FIRST, object_name;
 ```
 
-
-
 ```
 SELECT
   current_user,
@@ -319,8 +322,6 @@ SELECT
   (SELECT count(*) FROM pg_roles) AS role_count,
   (SELECT count(*) FROM pg_namespace) AS schema_count;
 ```
-
-
 
 ```
 SELECT datname,
@@ -343,23 +344,15 @@ FROM pg_roles
 ORDER BY rolname;
 ```
 
-
-
 ```
 REVOKE CONNECT ON DATABASE postgres FROM PUBLIC;
 ```
-
-
 
 ```
 GRANT CONNECT ON DATABASE odoo TO odoo_user;
 ```
 
-
-
 ***
-
-
 
 ## psql
 
@@ -367,13 +360,9 @@ GRANT CONNECT ON DATABASE odoo TO odoo_user;
 psql -h domain.example.com -U postgresUser -d postgresDatabase
 ```
 
-
-
 ```
  psql -U postgresUser -h  domain.example.com  -d postgresDatabase -c "\copy public.texts(timestamp, text) FROM 'texts.csv' WITH (FORMAT csv)"
 ```
-
-
 
 | Meta-Command               | Effect                                   |
 | -------------------------- | ---------------------------------------- |
@@ -395,12 +384,6 @@ psql -h domain.example.com -U postgresUser -d postgresDatabase
 
 [https://www.postgresql.org/docs/current/app-psql.html](https://www.postgresql.org/docs/current/app-psql.html)
 
-
-
-
-
-
-
 ## Other
 
 sudo -iu postgres initdb --locale=C.UTF-8 --encoding=UTF8 -D /var/lib/postgres/data
@@ -411,22 +394,10 @@ sudo -iu postgres initdb --locale=C.UTF-8 --encoding=UTF8 -D /var/lib/postgres/d
 
 High availabiltiy
 
-
-
-#### Patroni&#x20;
+#### Patroni
 
 [https://www.youtube.com/watch?v=cEWBC3a33ds](https://www.youtube.com/watch?v=cEWBC3a33ds)
 
 [https://www.youtube.com/watch?v=RHwglGf\_z40](https://www.youtube.com/watch?v=RHwglGf_z40)
-
-
-
-
-
-
-
-
-
-
 
 ***
