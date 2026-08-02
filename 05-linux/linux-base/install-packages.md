@@ -1,15 +1,23 @@
 # Linux Install Packages
 
+## Flathub
+
+```
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+
+
 ## Debian
 
-update your system and packages:&#x20;
+update your system and packages:
 
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 
 you can install the packages on debian by running:\
-`sudo apt install put-packagename-here`&#x20;
+`sudo apt install put-packagename-here`
 
 | Package               | Space Needed |
 | --------------------- | ------------ |
@@ -42,4 +50,3 @@ you can install the packages on debian by running:\
 |         |
 
 ## RHEL
-

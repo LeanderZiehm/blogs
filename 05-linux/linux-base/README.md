@@ -1,4 +1,14 @@
-# Linux Encryption Secrets Passwords
+# Linux Base
+
+
+
+## Environment Variables
+
+```
+set -a && . ./.env && set +a
+```
+
+
 
 ## Generate password:
 
@@ -24,3 +34,29 @@ sudo apt update && sudo apt install keepassxc
 ```
 
 <br>
+
+
+
+
+
+
+
+## tools:
+
+tmux
+
+vim
+
+ranger
+
+find
+
+ls
+
+grep
+
+?mc?
+
+{% content-ref url="../../08-terminal-cli-tools/tmux.md" %}
+[tmux.md](../../08-terminal-cli-tools/tmux.md)
+{% endcontent-ref %}

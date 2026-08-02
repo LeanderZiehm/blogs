@@ -44,24 +44,22 @@
 
 ## 05-Linux
 
-* [Linux Users, Groups, Permissions](05-linux/linux-users.md)
-* [Linux Encryption Secrets Passwords](05-linux/linux-encryption-secrets-passwords.md)
-* [Linux Virtualization](05-linux/virtualization.md)
-* [Linux Workflow](05-linux/linux-workflow.md)
+* [Linux Base](05-linux/linux-base/README.md)
+  * [Linux Users, Groups, Permissions](05-linux/linux-base/linux-users.md)
+  * [Linux Commands](05-linux/linux-base/linux-commands.md)
+  * [Linux Folder Structure](05-linux/linux-base/linux-folders-and-logs.md)
+  * [Linux Process Memory](05-linux/linux-base/linux-process-memory.md)
+  * [Linux Install Packages](05-linux/linux-base/install-packages.md)
+  * [Linux Virtualization](05-linux/linux-base/virtualization.md)
+  * [Linux Distros](05-linux/linux-base/page-1.md)
+  * [Linux Systemd & Journal](05-linux/linux-base/linux-journal.md)
+  * [Linux Power Settings](05-linux/linux-base/suspend-mode.md)
 * [Linux Networking](05-linux/linux-ip/README.md)
   * [Linux Proxy](05-linux/linux-ip/linux-proxy.md)
   * [Linux Scan Devices on Network](05-linux/linux-ip/network-devices.md)
-* [Linux Commands](05-linux/linux-commands.md)
-* [Linux Install Packages](05-linux/install-packages.md)
-* [Linux Environment Variables](05-linux/linux-environment-variables.md)
 * [Linux Clean Storage](05-linux/page-2.md)
-* [Linux Systemd & Journal](05-linux/linux-journal.md)
-* [Linux Folders & Logs](05-linux/linux-folders-and-logs.md)
-* [Linux Distros](05-linux/page-1.md)
-* [Other Linux Topics](05-linux/other/README.md)
-  * [Linux Power Settings](05-linux/other/suspend-mode.md)
-* [Linux Process Memory](05-linux/linux-process-memory.md)
-* [Linux Stats Info](05-linux/linux-stats-info.md)
+* [Linux Security](05-linux/linux-security/README.md)
+  * [Linux Stats Info](05-linux/linux-security/linux-stats-info.md)
 
 ## 07-Networking
 
