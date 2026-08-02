@@ -45,6 +45,55 @@ psql -h localhost -p 5432 -U postgres -d postgres
 
 
 
+
+
+## Step 1: Create Database
+
+in psql:
+
+```
+CREATE DATABASE mydb;
+```
+
+```
+ \c mydb 
+```
+
+
+
+
+
+
+
+
+
+***
+
+## psql
+
+| Meta-Command               | Effect                                   |
+| -------------------------- | ---------------------------------------- |
+| \c or \change databaseName | change database                          |
+| \dt                        | Lists all tables in the current database |
+| \l or list                 | list all databases                       |
+| \du                        | show users                               |
+| \conninfo                  | connection info                          |
+| \d tableName               | show schema of table                     |
+| \d+ tableName              | detailed table infos                     |
+|                            |                                          |
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## New user and db
 
 sudo -iu postgres createuser --interactive\
@@ -205,6 +254,34 @@ crontab -e
 * * * * * ~/backup-postgres.sh >> ~/pg_backup.log 2>&1
 ```
 
+## psql
+
+```
+psql -h domain.example.com -U postgresUser -d postgresDatabase
+```
+
+```
+ psql -U postgresUser -h  domain.example.com  -d postgresDatabase -c "\copy public.texts(timestamp, text) FROM 'texts.csv' WITH (FORMAT csv)"
+```
+
+| Meta-Command               | Effect                                   |
+| -------------------------- | ---------------------------------------- |
+| \c or \change databaseName | change database                          |
+| \dt                        | Lists all tables in the current database |
+| \l or list                 | list all databases                       |
+| \du                        | show users                               |
+| \conninfo                  | connection info                          |
+| \d tableName               | show schema of table                     |
+| \d+ tableName              | detailed table infos                     |
+|                            |                                          |
+
+| **`\di`** | Lists all indexes.   | Helps with performance tuning and understanding database schema.          |
+| --------- | -------------------- | ------------------------------------------------------------------------- |
+| **`\dv`** | Lists all views.     | Essential for understanding virtual or pre-packaged data representations. |
+| **`\df`** | Lists all functions. | Crucial for projects that rely heavily on stored procedures.              |
+|           |                      |                                                                           |
+|           |                      |                                                                           |
+
 ## Paths
 
 config:
@@ -351,38 +428,6 @@ REVOKE CONNECT ON DATABASE postgres FROM PUBLIC;
 ```
 GRANT CONNECT ON DATABASE odoo TO odoo_user;
 ```
-
-***
-
-## psql
-
-```
-psql -h domain.example.com -U postgresUser -d postgresDatabase
-```
-
-```
- psql -U postgresUser -h  domain.example.com  -d postgresDatabase -c "\copy public.texts(timestamp, text) FROM 'texts.csv' WITH (FORMAT csv)"
-```
-
-| Meta-Command               | Effect                                   |
-| -------------------------- | ---------------------------------------- |
-| \list or \l                | list all databases                       |
-| \dt                        | Lists all tables in the current database |
-| \du                        | show users                               |
-| \conninfo                  | connection info                          |
-| \change or \c databaseName | change database                          |
-| \d tableName               | show schema of table                     |
-| \d+ tableName              | detailed table infos                     |
-|                            |                                          |
-
-| **`\di`** | Lists all indexes.   | Helps with performance tuning and understanding database schema.          |
-| --------- | -------------------- | ------------------------------------------------------------------------- |
-| **`\dv`** | Lists all views.     | Essential for understanding virtual or pre-packaged data representations. |
-| **`\df`** | Lists all functions. | Crucial for projects that rely heavily on stored procedures.              |
-|           |                      |                                                                           |
-|           |                      |                                                                           |
-
-[https://www.postgresql.org/docs/current/app-psql.html](https://www.postgresql.org/docs/current/app-psql.html)
 
 ## Other
 
