@@ -35,7 +35,23 @@ sudo apt update && sudo apt install keepassxc
 
 <br>
 
+## Clipboard:
 
+```
+wl-clipboard < file.txt
+```
+
+
+
+## Bash better history search
+
+```
+cat << 'EOF' >> ~/.inputrc
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+EOF
+bind -f ~/.inputrc
+```
 
 
 
