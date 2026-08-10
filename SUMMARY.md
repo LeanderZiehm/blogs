@@ -10,6 +10,7 @@
 * [React](01-full-stack/react.md)
 * [Node.js](01-full-stack/node.js-express.md)
 * [Container Images](01-full-stack/container-images.md)
+* [Testing E2E](01-full-stack/testing-e2e.md)
 
 ## Projects
 
