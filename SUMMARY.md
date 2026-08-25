@@ -4,6 +4,32 @@
 
 * [Welcome to My Notes](README.md)
 
+## 04-System-Administration
+
+* [Podman](04-system-administration/podman.md)
+* [Reverse Proxy setup](04-system-administration/nginx.md)
+* [Firewall](04-system-administration/firewall.md)
+* [Postgesql](04-system-administration/postgesql-on-linux.md)
+* [Cloud](04-system-administration/cloud.md)
+* [Apps](04-system-administration/apps.md)
+
+## 03-Programming-Languages
+
+* [Python](03-programming-languages/python/README.md)
+  * [Setup](03-programming-languages/python/setup.md)
+  * [Pip and uv](03-programming-languages/python/pip-and-uv.md)
+  * [Python Language Features](03-programming-languages/python/python-language-features.md)
+  * [Memory Inspection](03-programming-languages/python/memory-inspection.md)
+* [Typescript](03-programming-languages/typescript/README.md)
+  * [Javascript](03-programming-languages/typescript/javascript.md)
+  * [Testing](03-programming-languages/typescript/testing.md)
+  * [Angular](03-programming-languages/typescript/angular.md)
+  * [Astro](03-programming-languages/typescript/astro.md)
+* [Go](03-programming-languages/go.md)
+* [Java](03-programming-languages/java/README.md)
+  * [Spring Boot Java](03-programming-languages/java/spring-boot.md)
+* [SQL](03-programming-languages/sql.md)
+
 ## 01-Full-Stack
 
 * [Tech Stack](01-full-stack/tech-stack.md)
@@ -17,31 +43,6 @@
 * [Mini Tasks/Project Ideas](projects/mini-tasks-project-ideas.md)
 * [Deployed Projects](projects/deployed-projects.md)
 * [Project: Personal Tracker](projects/project-personal-tracker.md)
-
-## 03-Programming-Languages
-
-* [Typescript](03-programming-languages/typescript/README.md)
-  * [Javascript](03-programming-languages/typescript/javascript.md)
-  * [Testing](03-programming-languages/typescript/testing.md)
-  * [Angular](03-programming-languages/typescript/angular.md)
-  * [Astro](03-programming-languages/typescript/astro.md)
-* [Go](03-programming-languages/go.md)
-* [Java](03-programming-languages/java/README.md)
-  * [Spring Boot Java](03-programming-languages/java/spring-boot.md)
-* [Python](03-programming-languages/python/README.md)
-  * [Setup](03-programming-languages/python/setup.md)
-  * [Pip and uv](03-programming-languages/python/pip-and-uv.md)
-  * [Python Language Features](03-programming-languages/python/python-language-features.md)
-  * [Memory Inspection](03-programming-languages/python/memory-inspection.md)
-* [SQL](03-programming-languages/sql.md)
-
-## 04-System-Administration
-
-* [Podman](04-system-administration/podman.md)
-* [Nginx setup](04-system-administration/nginx.md)
-* [Firewall](04-system-administration/firewall.md)
-* [Postgesql](04-system-administration/postgesql-on-linux.md)
-* [Cloud](04-system-administration/cloud.md)
 
 ## 05-Linux
 

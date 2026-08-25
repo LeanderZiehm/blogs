@@ -16,6 +16,59 @@ podman run --replace --name pg18 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=
 
 
 
+
+
+
+
+## Security&#x20;
+
+
+
+
+
+```
+# Drop all capabilities - the container runs with no Linux capabilities
+podman run --rm \
+  --cap-drop ALL \
+  docker.io/library/alpine:latest \
+  sh -c "echo 'Running with no capabilities'"
+
+# Drop all, then add back only what is needed
+# This follows the principle of least privilege
+podman run --rm \
+  --cap-drop ALL \
+  --cap-add NET_BIND_SERVICE \
+  docker.io/library/alpine:latest \
+  sh -c "apk add --no-cache libcap && getpcaps 1"
+```
+
+
+
+
+
+
+
+
+
+donloawnload image and upload it.
+
+```
+# Save the image to a tar file
+docker save bytebase/bytebase:latest > bytebase-latest.tar
+
+# Transfer the tar file to your target environment
+# Then load it on the target system
+docker load < bytebase-latest.tar
+
+# Tag and push as described above
+docker tag bytebase/bytebase:latest your-registry.acme.com/library/bytebase:latest
+docker push your-registry.acme.com/library/bytebase:latest
+```
+
+
+
+
+
 ## Commands
 
 example oneliners:

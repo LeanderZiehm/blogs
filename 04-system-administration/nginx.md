@@ -1,4 +1,38 @@
-# Nginx setup
+# Reverse Proxy setup
+
+
+
+## HaProxy
+
+```
+podman run -d \
+  --name haproxy \
+  -p 8080:80 \
+-p 8433:433 \
+  -v $HOME/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro \
+  -v $HOME/haproxy/ssl:/etc/haproxy/ssl \
+  docker.io/haproxy:3.4 
+```
+
+## Oauth Proxy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Nginx&#x20;
 
 install nginx:
 
@@ -39,12 +73,6 @@ download and run:
 sh setup-nginx.sh
 ```
 
-
-
-
-
-
-
 ## manually check
 
 ```
@@ -61,9 +89,5 @@ sudo nginx -t && sudo systemctl reload nginx
 
 /etc/nginx/sites-available/\
 /etc/nginx/sites-enabled/
-
-
-
-
 
 ***
