@@ -1,65 +1,4 @@
-# SSH
-
-## Generate Key
-
-run:
-
-```
-ssh-keygen 
-```
-
-secure algorithm:
-
-```
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-change passphrase:
-
-```shell
-ssh-keygen -p -f ~/.ssh/id_ed25519
-```
-
-## SSH Config
-
-vim \~/.ssh/config
-
-```
-Host shortname
-    HostName 100.100.100.100
-    User ubuntu
-    IdentityFile ~/.ssh/private-key-filename.key
-```
-
-## SSH Agent
-
-save you time with passphrase automation.
-
-check if your ssh agent is running:
-
-```
-eval "$(ssh-agent -s)"
-```
-
-add ssh key:
-
-```
-ssh-add ~/.ssh/id_ed25519
-```
-
-or set timeout period
-
-```
-ssh-add -t 8h ~/.ssh/id_ed25519
-```
-
-check loaded keys:
-
-```
-ssh-add -l
-```
-
-## Host SSH
+# SSH Server
 
 #### Install SSH Server
 
@@ -90,11 +29,8 @@ Search for the line that contains PasswordAuthentication and change it from yes 
 
 you can edit sshd\_config with your favorite text editor:
 
-{% code fullWidth="false" %}
-```
-sudo vim /etc/ssh/sshd_config
-```
-{% endcode %}
+<pre data-full-width="false"><code><strong>sudo vim /etc/ssh/sshd_config
+</strong></code></pre>
 
 or
 
@@ -112,9 +48,31 @@ sudo systemctl restart sshd
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## SSH Tunneling User
-
-
 
 ## 1. Create a dedicated user
 
@@ -127,10 +85,6 @@ Set a password (you can also disable password auth later and use keys only).
 ```
 openssl rand -base64 64
 ```
-
-***
-
-
 
 ***
 
@@ -158,8 +112,6 @@ add key to:
 sudo vim /home/ssh_port_tunneling_user/.ssh/authorized_keys
 ```
 
-
-
 Then fix permissions:
 
 ```
@@ -167,15 +119,7 @@ sudo chmod 600 /home/ssh_port_tunneling_user/.ssh/authorized_keys
 sudo chown ssh_port_tunneling_user:ssh_port_tunneling_user /home/ssh_port_tunneling_user/.ssh/authorized_keys
 ```
 
-
-
-
-
 ***
-
-
-
-
 
 ## 5. Restrict SSH to port forwarding only
 
@@ -248,8 +192,75 @@ Then open:
 http://localhost:5601
 ```
 
-
-
 <br>
 
 ***
+
+
+
+
+
+
+
+## SSH Client
+
+
+
+## Generate Key
+
+run:
+
+```
+ssh-keygen 
+```
+
+secure algorithm:
+
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+change passphrase:
+
+```shell
+ssh-keygen -p -f ~/.ssh/id_ed25519
+```
+
+## SSH Config
+
+vim \~/.ssh/config
+
+```
+Host shortname
+    HostName 100.100.100.100
+    User ubuntu
+    IdentityFile ~/.ssh/private-key-filename.key
+```
+
+## SSH Agent
+
+save you time with passphrase automation.
+
+check if your ssh agent is running:
+
+```
+eval "$(ssh-agent -s)"
+```
+
+add ssh key:
+
+```
+ssh-add ~/.ssh/id_ed25519
+```
+
+or set timeout period
+
+```
+ssh-add -t 8h ~/.ssh/id_ed25519
+```
+
+check loaded keys:
+
+```
+ssh-add -l
+```

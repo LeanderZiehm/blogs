@@ -11,7 +11,9 @@
 * [Firewall](04-system-administration/firewall.md)
 * [Postgesql](04-system-administration/postgesql-on-linux.md)
 * [Cloud](04-system-administration/cloud.md)
+* [SSH Server](04-system-administration/ssh.md)
 * [Apps](04-system-administration/apps.md)
+* [Networking](04-system-administration/networking.md)
 
 ## 03-Programming-Languages
 
@@ -80,7 +82,6 @@
 
 * [git](08-terminal-cli-tools/git.md)
 * [Tmux](08-terminal-cli-tools/tmux.md)
-* [SSH](08-terminal-cli-tools/ssh.md)
 * [vim](08-terminal-cli-tools/vim.md)
 * [nmap](08-terminal-cli-tools/nmap.md)
 * [Bash](08-terminal-cli-tools/bash.md)

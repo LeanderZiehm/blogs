@@ -26,15 +26,15 @@ podman run -p 8321:8321 ghcr.io/leanderziehm/container-example-cicd:latest
 
 ## Tailscale
 
+
+
 ```
-podman run -d --name=tailscaled -e TS_AUTHKEY=tskey-auth-abc... -e TS_HOSTNAME=podman-node -e TS_STATE_DIR=/var/lib/tailscale -e TS_USERSPACE=true -v tailscale-state:/var/lib/tailscale docker.io/tailscale/tailscale:v1.102.3
+podman run --replace --restart=unless-stopped --replace -d --name=tailscaled -e TS_AUTHKEY=tskey-auth-abc... -e TS_HOSTNAME=podman-node -e TS_STATE_DIR=/var/lib/tailscale -e TS_USERSPACE=true -v tailscale-state:/var/lib/tailscale docker.io/tailscale/tailscale:v1.102.3
 ```
 
 ```
-podman run -p 8321:8321 --name x --replace --network=container:tailscaled -d ghcr.io/leanderziehm/container-example-cicd:latest
+podman run --name x --replace --network=container:tailscaled -d ghcr.io/leanderziehm/container-example-cicd:latest
 ```
-
-
 
 ## Security&#x20;
 

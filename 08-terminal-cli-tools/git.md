@@ -15,10 +15,6 @@ git reset --hard HEAD~1
 git logs
 ```
 
-
-
-
-
 basics:
 
 ```
@@ -55,7 +51,7 @@ sometimes vscode does a bunch of requests to the git server with the wrong crede
 
 when using ssh with passphrase `ssh-add` can save time. [ssh](https://github.com/LeanderZiehm/blogs/blob/main/terminal-cli-tools/terminal-cli-tools/ssh.md)
 
-[ssh](ssh.md)
+[ssh](../04-system-administration/ssh.md)
 
 ***
 
