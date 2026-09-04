@@ -6,6 +6,16 @@ vpn tailscale.
 
 
 
+```
+podman network create mynetwork
+```
+
+
+
+
+
+
+
 
 
 ```

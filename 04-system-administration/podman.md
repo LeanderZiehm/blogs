@@ -26,19 +26,37 @@ podman run -p 8321:8321 ghcr.io/leanderziehm/container-example-cicd:latest
 
 ## Tailscale
 
-
-
 ```
-podman run --replace --restart=unless-stopped --replace -d --name=tailscaled -e TS_AUTHKEY=tskey-auth-abc... -e TS_HOSTNAME=podman-node -e TS_STATE_DIR=/var/lib/tailscale -e TS_USERSPACE=true -v tailscale-state:/var/lib/tailscale docker.io/tailscale/tailscale:v1.102.3
+podman network create tailscaled-network
 ```
 
 ```
-podman run --name x --replace --network=container:tailscaled -d ghcr.io/leanderziehm/container-example-cicd:latest
+podman run --replace --restart=unless-stopped --network tailscaled-network -d --name=tailscaled -e TS_AUTHKEY=tskey-auth-abc... -e TS_STATE_DIR=/var/lib/tailscale -e TS_USERSPACE=true -v tailscale-state:/var/lib/tailscale -e TS_HOSTNAME=tailscale-container docker.io/tailscale/tailscale:v1.102.3
 ```
 
-## Security&#x20;
+```
+podman run --name x --replace --network tailscaled-network -d ghcr.io/leanderziehm/container-example-cicd:latest
+```
+
+## Elastic Search
 
 
+
+
+
+
+
+## Grafana
+
+
+
+
+
+
+
+
+
+## Security: Drop Capabilities
 
 
 

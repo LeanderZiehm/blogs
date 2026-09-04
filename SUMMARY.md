@@ -6,14 +6,14 @@
 
 ## 04-System-Administration
 
+* [Networking](04-system-administration/networking.md)
+* [SSH Server](04-system-administration/ssh.md)
 * [Podman](04-system-administration/podman.md)
 * [Reverse Proxy setup](04-system-administration/nginx.md)
 * [Firewall](04-system-administration/firewall.md)
 * [Postgesql](04-system-administration/postgesql-on-linux.md)
 * [Cloud](04-system-administration/cloud.md)
-* [SSH Server](04-system-administration/ssh.md)
 * [Apps](04-system-administration/apps.md)
-* [Networking](04-system-administration/networking.md)
 
 ## 03-Programming-Languages
 
